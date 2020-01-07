@@ -1,0 +1,126 @@
+.class_name_row {
+    font-weight:bold;  
+    padding:5px;
+    width:80%;
+}
+
+.class_attribute_row {
+    display:none;
+}
+
+.class_category_row {
+    width:200px!important;
+}
+
+.six_dice {
+    width:60px;
+    height:60px;
+    padding:0px;
+    margin:0px 10px 0px 10px;
+    display: inline-block;
+}
+
+.btn_row > button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dice1 {
+    width:60px;
+    height:60px;
+    padding:0px;
+    margin:0px;
+}
+svg {
+    cursor: pointer;
+}
+.dice_display{
+    width:100%;
+    border:1px solid lightgrey;
+    padding:30px 50px 30px 50px;
+    text-align: center;
+}
+.rolling {
+    transform-style: preserve-3d;
+    animation: roll 0.3s linear;
+    /*animation: roll 0.5s infinate linear; */
+}
+
+.shaking {
+    transform-style: preserve-3d;
+    animation: shake 0.3s linear infinite;
+}
+.shaking2 {
+    transform-style: preserve-3d;
+    animation: shake2 0.3s linear infinite;
+}
+
+.bottom_panel {
+    background:lightgray;
+    text-align:center;
+    color: gray;
+    line-height:0px;
+    height:12px;
+    border-radius: 0px 0px 5px 5px;
+    border: 1px solid #949494;
+    margin-top:10px;
+    cursor:pointer;
+}
+
+.bottom_panel > span {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg) }
+    12% { transform: rotate(45deg) }
+    25% { transform: rotate(90deg) }
+    37% { transform: rotate(133deg) }
+    50% { transform: rotate(180deg) }
+    62% { transform: rotate(223deg) }
+    75% { transform: rotate(270deg) }
+    87% { transform: rotate(313deg) }
+    100% { transform: rotate(360deg) }
+}
+
+@keyframes roll2 {
+    0% { transform: translate3d(-200px,-50px,-400px) }
+    12% { transform: translate3d(0px,0,-100px) }
+    25% { transform: translate3d(200px,-50px,-400px) }
+    37% { transform: translate3d(0px,-100px,-800px) }
+    50% { transform: translate3d(-200px,-50px,-400px) }
+    62% { transform: translate3d(0px,0,-100px) }
+    75% { transform: translate3d(200px,-50px,-400px) }
+    87% { transform: translate3d(0px,-100px,-800px) }
+    100% { transform: translate3d(-200px,-50px,-400px) }
+}
+
+@keyframes shake {
+    0% { transform: translate(10px, 10px) rotate(0deg); }
+    10% { transform: translate(-10px, 0px) rotate(-1deg); }
+    20% { transform: translate(-30px, 0px) rotate(1deg); }
+    30% { transform: translate(30px, 20px) rotate(0deg); }
+    40% { transform: translate(10px, -10px) rotate(1deg); }
+    50% { transform: translate(-10px, 20px) rotate(-1deg); }
+    60% { transform: translate(-30px, 10px) rotate(0deg); }
+    70% { transform: translate(30px, 10px) rotate(-1deg); }
+    80% { transform: translate(-10px, -10px) rotate(1deg); }
+    90% { transform: translate(10px, 20px) rotate(0deg); }
+    100% { transform: translate(10px, -20px) rotate(-1deg); }
+  }
+
+  @keyframes shake2 {
+    
+    0% { transform: translate(10px, -20px) rotate(-1deg); }
+    10% { transform: translate(10px, 20px) rotate(0deg); }
+    20% { transform: translate(-10px, -10px) rotate(1deg); }
+    30% { transform: translate(30px, 10px) rotate(-1deg); }
+    40% { transform: translate(-30px, 10px) rotate(0deg); }
+    50% { transform: translate(-10px, 20px) rotate(-1deg); }
+    60% { transform: translate(10px, -10px) rotate(1deg); }
+    70% { transform: translate(30px, 20px) rotate(0deg); }
+    80% { transform: translate(-30px, 0px) rotate(1deg); }
+    90% { transform: translate(-10px, 0px) rotate(-1deg); }
+    100% { transform: translate(10px, 10px) rotate(0deg); }
+  }

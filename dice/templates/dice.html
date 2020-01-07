@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <script src="{% static 'js/dice.js' %}"></script>
+    
+    <div class="container">
+        <div class="row">
+
+            <canvas 
+                id="canvas"
+                width="100px"
+                height="100px"
+            ></canvas>
+
+        </div>
+    </div>
+
+{% endblock %}

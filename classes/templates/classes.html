@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <script src="{% static 'js/classes.js' %}"></script>
+
+    <div class="container">
+        <div class="row">
+            <h1>Classes Here</h1>
+
+            {% for class in classes %}
+            <table class="table table-sm">
+                <tr class="class_name_row">
+                    <td class="class_category_row">Name</td>
+                    <td>{{ class.name }}</td>
+                </tr>
+                <tr class="class_attribute_row">
+                    <td scope="col">Hit Die</td>
+                    <td>{{ class.hit_die }}</td>
+                </tr>
+                <tr class="class_attribute_row">
+                    <td 
+                        scope="col"
+                        colspan="2">Proficiency Choices</td>
+                </tr>
+                {% for choice in class.proficiency_choices.0.from %}
+                <tr  class="class_attribute_row">
+                    {% if forloop.counter0 == 0 %}
+                    <td 
+                        scope="col"
+                        rowspan="{{class.proficiency_choices.0.from|length }}">Name</td>
+                    {% endif %}
+                    <td>{{ choice.name }}</td>
+                </tr>
+                {% endfor %}
+                <tr  class="class_attribute_row">
+                    <td scope="col">Choose</td>
+                    <td>{{ class.proficiency_choices.0.choose }}</td>
+                </tr>
+                <tr  class="class_attribute_row">
+                    <td 
+                        scope="col"
+                        colspan="2">Proficiencies</td>
+                </tr>
+                {% for proficiency in class.proficiencies %}
+                <tr class="class_attribute_row">
+                    {% if forloop.counter0 == 0 %}
+                    <td 
+                        scope="col"
+                        rowspan="{{class.proficiencies|length }}">Name</td>
+                    {% endif %}
+                    <td>{{ proficiency.name }}</td>
+                </tr>
+                {% endfor %}
+                
+                <tr class="class_attribute_row">
+                    <td 
+                        scope="col"
+                        colspan="2">Saving Throws</td>
+                </tr>
+                {% for saving_throw in class.saving_throws %}
+                <tr class="class_attribute_row">
+                    {% if forloop.counter0 == 0 %}
+                    <td 
+                        scope="col"
+                        rowspan="{{class.saving_throws|length }}">Name</td>
+                    {% endif %}
+                    <td>{{ saving_throw.name }}</td>
+                </tr>
+                {% endfor %}
+
+                <tr class="class_attribute_row">
+                    <td scope="col">Equipment</tdscope="col">
+                    <td>{{ class.starting_equipment.url }}</td>
+                </tr>
+
+                <tr class="class_attribute_row">
+                    <td scope="col">Class Levels</td>
+                    <td>{{ class.class_levels.url }}</td>
+                </tr>
+                <tr  class="class_attribute_row">
+                    <td scope="col">Sub Classes</td>
+                    <td>{{ class.subclasses.url }}</td>
+                </tr>
+            </table>
+            {% endfor %}
+
+        </div>
+    </div>
+        
+    
+{% endblock %}
